@@ -57,6 +57,20 @@
             android:scaleType="fitCenter"
             android:src="@drawable/dice1" />
 
+
+        <ImageView
+            android:id="@+id/animDice"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="280dp"
+            android:layout_marginEnd="29dp"
+            android:layout_marginBottom="110dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/dice" />
+
         <ImageView
             android:id="@+id/imagelion"
             android:layout_width="100dp"
@@ -72,6 +86,70 @@
             android:layout_alignParentTop="true"
             android:layout_marginTop="10dp"
             android:src="@drawable/level1" />
+
+        <ImageView
+            android:id="@+id/rail"
+            android:layout_width="115dp"
+            android:layout_height="106dp"
+            android:layout_above="@+id/rail3"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="7dp"
+            android:layout_marginBottom="84dp"
+            android:layout_toStartOf="@+id/rail2"
+            android:rotation="90" />
+
+        <ImageView
+            android:id="@+id/rail2"
+            android:layout_width="142dp"
+            android:layout_height="106dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="-270dp"
+            android:layout_toStartOf="@+id/rail3"
+            android:rotation="90" />
+
+        <ImageView
+            android:id="@+id/rail3"
+            android:layout_width="130dp"
+            android:layout_height="100dp"
+            android:layout_alignBottom="@+id/imagelion"
+            android:layout_marginEnd="151dp"
+            android:layout_marginBottom="-50dp"
+            android:layout_toStartOf="@+id/rail4"
+            android:rotation="90" />
+
+        <ImageView
+            android:id="@+id/rail4"
+            android:layout_width="128dp"
+            android:layout_height="103dp"
+            android:layout_above="@+id/rail5"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="-5dp"
+            android:layout_marginBottom="86dp"
+            android:rotation="90" />
+
+        <ImageView
+            android:id="@+id/rail5"
+            android:layout_width="130dp"
+            android:layout_height="100dp"
+            android:layout_alignBottom="@+id/image1"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="-250dp"
+            android:rotation="90" />
+
+        <ImageView
+            android:id="@+id/rail6"
+            android:layout_width="123dp"
+            android:layout_height="102dp"
+            android:layout_below="@+id/rail2"
+            android:layout_marginStart="-138dp"
+            android:layout_marginTop="83dp"
+            android:layout_toEndOf="@+id/rail3"
+            android:rotation="90" />
 
 
     </RelativeLayout>

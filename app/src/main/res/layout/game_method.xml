@@ -24,6 +24,36 @@
             android:layout_marginBottom="45dp"
             android:text="back"
             tools:layout_editor_absoluteY="217dp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="80dp"
+            android:layout_height="105dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="38dp"
+            android:layout_marginTop="45dp"
+            app:srcCompat="@drawable/dice4" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="167dp"
+            android:layout_height="107dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="38dp"
+            android:layout_marginTop="61dp"
+            android:layout_toEndOf="@+id/imageView"
+            android:text="버튼을 눌러서 주사위의 눈금만큼 플레이어가 이동합니다." />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="92dp"
+            android:layout_marginTop="68dp"
+            android:text="골인지점까지 이동하세요!" />
     </RelativeLayout>
 
 
