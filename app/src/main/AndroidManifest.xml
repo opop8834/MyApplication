@@ -23,6 +23,8 @@
         <activity android:name="Developer_info"></activity>
         <activity android:name="Lose"></activity>
         <activity android:name="Win"></activity>
+        <activity android:name="Loading"></activity>
+
 
     </application>
 

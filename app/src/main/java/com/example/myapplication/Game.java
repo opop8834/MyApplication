@@ -29,24 +29,16 @@ public class Game extends AppCompatActivity{
     int rand;
     int randai;
     int count;
+    static int overlap=-1;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game);
-        ImageView rail = (ImageView)findViewById(R.id.rail);
-        Glide.with(this).load(R.raw.rail_gif).into(rail);
-        ImageView rail2 = (ImageView)findViewById(R.id.rail2);
-        Glide.with(this).load(R.raw.rail_gif).into(rail2);
-        ImageView rail3 = (ImageView)findViewById(R.id.rail3);
-        Glide.with(this).load(R.raw.rail_gif).into(rail3);
-        ImageView rail4 = (ImageView)findViewById(R.id.rail4);
-        Glide.with(this).load(R.raw.rail_gif).into(rail4);
-        ImageView rail5 = (ImageView)findViewById(R.id.rail5);
-        Glide.with(this).load(R.raw.rail_gif).into(rail5);
-        ImageView rail6 = (ImageView)findViewById(R.id.rail6);
-        Glide.with(this).load(R.raw.rail_gif).into(rail6);
+        ImageView bird = (ImageView) findViewById(R.id.bird);
+        Glide.with(this).load(R.raw.bird).into(bird);
+        ImageView rollerimg = (ImageView) findViewById(R.id.rollerimg);
+        Glide.with(this).load(R.raw.roller).into(rollerimg);
 
         imageDice = findViewById(R.id.imageDice);
         Button bac = (Button) findViewById(R.id.bac);
@@ -57,19 +49,24 @@ public class Game extends AppCompatActivity{
         TimerTask timerTask = new TimerTask() {
             @Override
             public void run() {
-                if (true)
-                {
+                if (true) {
                     rand = getRandom(6, 0);
+                    if (overlap == rand) {
+                        if (rand > 3) {
+                            rand = getRandom(3, 0);
+                        } else if (rand <= 3) {
+                            rand = getRandom(3, 3);
+                        }
+                    }
                     imageDice.setImageResource(diceId[rand]);
+                    overlap = rand;
                 }
             }
         };
-        timer.schedule(timerTask, 0, 500);
-
-
-        bac.setOnClickListener(new View.OnClickListener(){
+        timer.schedule(timerTask, 0, 700);
+        bac.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
+            public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
                 finish();
@@ -78,8 +75,8 @@ public class Game extends AppCompatActivity{
     }
     public void onClick(View view) throws InterruptedException {
 
-        ImageView dice1 = (ImageView)findViewById(R.id.animDice);
-        final AnimationDrawable drawable = (AnimationDrawable) dice1.getDrawable();
+        ImageView walk = (ImageView)findViewById(R.id.walking);
+        final AnimationDrawable drawable = (AnimationDrawable) walk.getDrawable();
         randai = 3;
 
         if (drawable.isRunning())
@@ -94,7 +91,6 @@ public class Game extends AppCompatActivity{
 
             anim = false;
         }
-
         final ImageView iv = (ImageView)findViewById(R.id.imagelion);
         iv.bringToFront();
         final ImageView ivai = (ImageView)findViewById(R.id.image1);
@@ -113,7 +109,6 @@ public class Game extends AppCompatActivity{
             anim.setDuration(2000);
             animai.setFillAfter(true);
             animai.setDuration(2000);
-
             iv.startAnimation(anim);
             ivai.startAnimation(animai);
 
