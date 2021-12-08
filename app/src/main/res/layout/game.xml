@@ -9,7 +9,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/backimg">
+        android:background="@drawable/backgameimg">
+
 
         <RelativeLayout
             android:id="@+id/layoutCenter"
@@ -86,26 +87,13 @@
             android:src="@drawable/level1" />
 
         <ImageView
-            android:id="@+id/bird"
-            android:layout_width="130dp"
-            android:layout_height="81dp"
-            android:layout_above="@+id/walking"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="13dp"
-            android:layout_marginEnd="7dp"
-            android:layout_marginBottom="7dp"
-            android:rotation="0" />
-
-        <ImageView
-            android:id="@+id/rollerimg"
-            android:layout_width="122dp"
-            android:layout_height="78dp"
-            android:layout_above="@+id/bac"
+            android:id="@+id/wowimg"
+            android:layout_width="239dp"
+            android:layout_height="103dp"
+            android:layout_above="@+id/imageDice"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="25dp"
-            android:layout_marginBottom="30dp"
-            android:rotation="0" />
-
+            android:layout_marginEnd="85dp"
+            android:layout_marginBottom="13dp"/>
 
     </RelativeLayout>
 

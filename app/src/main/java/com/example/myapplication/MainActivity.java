@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mediaPlayer = MediaPlayer.create(this, R.raw.background);
-        mediaPlayer.setLooping(true); // 무한 루프
+        //mediaPlayer.setLooping(true); // 무한 루프
 
         music = (Button) findViewById(R.id.music);
         music.setOnClickListener(new View.OnClickListener(){

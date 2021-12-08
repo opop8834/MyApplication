@@ -10,8 +10,6 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.bumptech.glide.Glide;
-
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -29,17 +27,13 @@ public class Game extends AppCompatActivity{
     int rand;
     int randai;
     int count;
-    static int overlap=-1;
+    static int overlap;
+    ImageView wow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game);
-        ImageView bird = (ImageView) findViewById(R.id.bird);
-        Glide.with(this).load(R.raw.bird).into(bird);
-        ImageView rollerimg = (ImageView) findViewById(R.id.rollerimg);
-        Glide.with(this).load(R.raw.roller).into(rollerimg);
-
         imageDice = findViewById(R.id.imageDice);
         Button bac = (Button) findViewById(R.id.bac);
         int[] diceId = {R.drawable.dice1, R.drawable.dice2,
@@ -53,9 +47,9 @@ public class Game extends AppCompatActivity{
                     rand = getRandom(6, 0);
                     if (overlap == rand) {
                         if (rand > 3) {
-                            rand = getRandom(3, 0);
+                            rand = getRandom(3, 0);  //3이하 출력
                         } else if (rand <= 3) {
-                            rand = getRandom(3, 3);
+                            rand = getRandom(3, 3);  //4이상 출력
                         }
                     }
                     imageDice.setImageResource(diceId[rand]);
@@ -63,7 +57,7 @@ public class Game extends AppCompatActivity{
                 }
             }
         };
-        timer.schedule(timerTask, 0, 700);
+        timer.schedule(timerTask, 0, 800);
         bac.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -78,6 +72,15 @@ public class Game extends AppCompatActivity{
         ImageView walk = (ImageView)findViewById(R.id.walking);
         final AnimationDrawable drawable = (AnimationDrawable) walk.getDrawable();
         randai = 3;
+        wow=(ImageView)findViewById(R.id.wowimg);
+        if (rand==5)  //주사위 눈금이 6일떄
+        {
+            wow.setImageResource(R.drawable.wow);
+        }
+        else
+        {
+            wow.setImageResource(0);
+        }
 
         if (drawable.isRunning())
         {
@@ -97,7 +100,6 @@ public class Game extends AppCompatActivity{
         ivai.bringToFront();
         if ( win == true && lose == true)
         {
-
             random = random + rand*50;
             randomai = randomai + randai*50;
             TranslateAnimation anim = new TranslateAnimation(locate,  random, 0, 0);
